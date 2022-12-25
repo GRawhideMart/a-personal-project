@@ -3,7 +3,7 @@ import { ReactElement } from 'react'
 import { IconButton, Link } from '@chakra-ui/react'
 import { IconType } from 'react-icons'
 
-interface BannerLinkProps {
+export interface BannerLinkProps {
   link: string
   ariaLabel: string
   isRound?: boolean
@@ -22,6 +22,7 @@ const BannerLink: React.FC<BannerLinkProps> = ({
         aria-label={ariaLabel}
         icon={icon}
         isRound={isRound}
+        ml={2}
       ></IconButton>
     </Link>
   )

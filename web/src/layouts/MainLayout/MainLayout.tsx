@@ -6,7 +6,17 @@ import {
   useColorMode,
   VStack,
 } from '@chakra-ui/react'
-import { FaMoon, FaSun } from 'react-icons/fa'
+import {
+  FaGithub,
+  FaInstagram,
+  FaLinkedin,
+  FaMoon,
+  FaSun,
+} from 'react-icons/fa'
+
+import BannerLink, {
+  BannerLinkProps,
+} from 'src/components/BannerLink/BannerLink'
 
 type MainLayoutProps = {
   children?: React.ReactNode
@@ -18,6 +28,24 @@ const MainLayout: React.FC<MainLayoutProps> = ({
   const { colorMode, toggleColorMode } = useColorMode()
   const isDark = colorMode === 'dark'
 
+  const MY_LINKS: BannerLinkProps[] = [
+    {
+      link: 'https://www.linkedin.com/in/giulio-mario-martena/?locale=en_US',
+      ariaLabel: 'linkedin-page',
+      icon: <FaLinkedin />,
+    },
+    {
+      link: 'https://www.instagram.com/daily_aiart',
+      ariaLabel: 'instagram-page',
+      icon: <FaInstagram />,
+    },
+    {
+      link: 'https://github.com/GRawhideMart',
+      ariaLabel: 'github-page',
+      icon: <FaGithub />,
+    },
+  ]
+
   return (
     <VStack p={5}>
       <Flex w={'100%'}>
@@ -25,6 +53,15 @@ const MainLayout: React.FC<MainLayoutProps> = ({
           Giulio Mario Martena
         </Heading>
         <Spacer />
+        {MY_LINKS.map((link, index) => (
+          <BannerLink
+            key={index}
+            link={link.link}
+            ariaLabel={link.ariaLabel}
+            icon={link.icon}
+            isRound={false}
+          />
+        ))}
 
         <IconButton
           ml={8}
