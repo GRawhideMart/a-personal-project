@@ -8,6 +8,7 @@ import {
 } from '@chakra-ui/react'
 import {
   FaGithub,
+  FaGoogle,
   FaInstagram,
   FaLinkedin,
   FaMoon,
@@ -44,6 +45,11 @@ const MainLayout: React.FC<MainLayoutProps> = ({
       ariaLabel: 'github-page',
       icon: <FaGithub />,
     },
+    {
+      link: 'https://g.dev/giuliomariomartena',
+      ariaLabel: 'google-dev-page',
+      icon: <FaGoogle />,
+    },
   ]
 
   return (
@@ -59,7 +65,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({
             link={link.link}
             ariaLabel={link.ariaLabel}
             icon={link.icon}
-            isRound={false}
+            isRound={true}
           />
         ))}
 

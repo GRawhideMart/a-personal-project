@@ -18,12 +18,7 @@ const BannerLink: React.FC<BannerLinkProps> = ({
 }) => {
   return (
     <Link href={link} target={'_blank'}>
-      <IconButton
-        aria-label={ariaLabel}
-        icon={icon}
-        isRound={isRound}
-        ml={2}
-      ></IconButton>
+      <IconButton aria-label={ariaLabel} icon={icon} isRound={isRound} ml={2} />
     </Link>
   )
 }
