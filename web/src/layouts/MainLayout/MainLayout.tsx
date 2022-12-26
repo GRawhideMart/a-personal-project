@@ -2,6 +2,7 @@ import {
   Flex,
   Heading,
   IconButton,
+  Img,
   Spacer,
   useColorMode,
   VStack,
@@ -18,6 +19,8 @@ import {
 import BannerLink, {
   BannerLinkProps,
 } from 'src/components/BannerLink/BannerLink'
+
+import logo from './giulio-martena-high-resolution-logo-white-on-transparent-background.png'
 
 type MainLayoutProps = {
   children?: React.ReactNode
@@ -53,10 +56,10 @@ const MainLayout: React.FC<MainLayoutProps> = ({
   ]
 
   return (
-    <VStack p={5}>
-      <Flex w={'100%'}>
-        <Heading ml={8} size="md" fontWeight={'semibold'} color="green.400">
-          Giulio Mario Martena
+    <VStack>
+      <Flex w={'100%'} backgroundColor="gray.800" p={8}>
+        <Heading ml={4}>
+          <Img src={logo} width="4rem" />
         </Heading>
         <Spacer />
         {MY_LINKS.map((link, index) => (
